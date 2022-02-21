@@ -1,26 +1,36 @@
-
 #container{
     display: flex;
-    border: 1px solid black;
+    /* height: 500px; */
 }
 #sidebar{
     flex:1;
-    margin-left: 10px;
+    border: 1px solid black;
+    
 }
 #sidebar>div{
     margin-bottom: 5px;
     text-align: center;
+    border: 1px solid black;
+}
+#searchbar{
+    margin-left: 10px;
     
 }
 
 #main{
-    flex: 7;
-    border: 1px solid black;
+    flex:7;
+    /* border: 1px solid red; */
+
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    grid-gap:20px;
+    margin-left: 5px;
 
-       
+}
+#main>div{
+    border: 1px solid black;
+    text-align: center;
 }
 img{
-    width: 50%;
+    width: 100%;
 }

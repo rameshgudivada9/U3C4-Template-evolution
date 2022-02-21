@@ -30,10 +30,20 @@ function appendArticles(articles, main) {
         let image=document.createElement("img");
         image.src=ele.urlToImage;
 
-        let p=document.createElement("p");
+        let p=document.createElement("h4");
         p.innerHTML=ele.title;
 
-        div.append(h4,image,p);
+        let des=document.createElement("p")
+        des.innerText=ele.description
+
+        div.append(h4,image,p,des);
+
+        div.onclick=()=>{
+            localStorage.setItem("article",JSON.stringify(ele));
+
+            window.location.href="news.html";
+
+        }
 
         main.append(div);
     })

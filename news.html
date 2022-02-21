@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./styles/main.css"/>
   </head>
 
   <body>
@@ -22,3 +23,45 @@
     </div>
   </body>
 </html>
+<script type="module">
+
+import sidebar from "./components/sidebar.js";
+
+let sidebar_div=document.getElementById("sidebar");
+
+sidebar_div.innerHTML=sidebar();
+
+
+
+let res=JSON.parse(localStorage.getItem("article"));
+console.log(res);
+
+let parent=document.getElementById("main");
+
+singlePicture(res)
+function singlePicture(res){
+
+
+let div=document.createElement("div");
+
+let h4=document.createElement("h4");
+    h4.innerText=res.source.name;
+
+let image=document.createElement("img");
+image.src=res.urlToImage;
+
+let h5=document.createElement("h5");
+h5.innerHTML=res.title;
+
+let p=document.createElement("p");
+p.innerText=res.content;
+
+div.append(h4,image,h5,p);
+
+
+parent.append(div)
+
+
+}
+
+</script>

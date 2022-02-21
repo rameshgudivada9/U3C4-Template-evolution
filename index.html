@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
 
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/main.css"/>
   </head>
 
   <body>
@@ -40,8 +40,22 @@ console.log(articles);
 
 let main=document.getElementById("main");
 
+appendArticles(articles,main)
 
-appendArticles(articles, main)
+let input=document.getElementById("searchbar");
+
+input.addEventListener('keypress',(e)=>{
+
+    if(e.key==='Enter'){
+
+        let input_value=document.getElementById("searchbar").value;
+
+        localStorage.setItem("search_term",JSON.stringify( input_value));
+
+        window.location.href="search.html";
+    }
+
+})
 
 
 
