@@ -1,0 +1,26 @@
+
+#container{
+    display: flex;
+    border: 1px solid black;
+}
+#sidebar{
+    flex:1;
+    margin-left: 10px;
+}
+#sidebar>div{
+    margin-bottom: 5px;
+    text-align: center;
+    
+}
+
+#main{
+    flex: 7;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+       
+}
+img{
+    width: 50%;
+}
